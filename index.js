@@ -27,7 +27,25 @@ function moveCharacter(){
     character.style.bottom = y + 'px'
 }
 
-setInterval(moveCharacter, 1)                                    
+setInterval(moveCharacter, 1)          
+
+document.addEventListener('keydown', function(e){
+    if(e.repeat) return;
+
+    if(e.key === 'ArrowLeft'){
+        direction = 'west'
+    }
+    if(e.key === 'ArrowUp'){
+        direction = 'north'
+    }
+    if(e.key === 'ArrowRight'){
+        direction = 'east'
+    }
+    if(e.key === 'ArrowDown'){
+        direction = 'south'
+    }
+})
+
 
 
 move(newImage('assets/tree.png')).to(200, 450)
